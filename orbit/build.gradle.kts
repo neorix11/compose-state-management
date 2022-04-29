@@ -50,12 +50,31 @@ android {
 
 dependencies {
 
-    implementation(libs.bundles.androidx.compose)
-    implementation(libs.androidx.coreKtx)
-    implementation(libs.androidx.activityCompose)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.test.ext)
-    androidTestImplementation(libs.androidx.test.espresso)
-    androidTestImplementation(libs.androidx.test.compose.ui)
-    debugImplementation(libs.androidx.composeUi.tooling)
+    with(libs) {
+        //core
+        implementation(bundles.androidx.compose)
+        implementation(androidx.coreKtx)
+        implementation(androidx.activityCompose)
+        implementation(coroutines)
+
+        //navigation
+        implementation(androidx.composeUi.nav)
+
+        //di
+        implementation(di.koin)
+
+        //utility
+        implementation(coil)
+        implementation(accompanist)
+
+        //mvi
+        implementation(mvi.orbit.viewmodel)
+
+        //test
+        testImplementation(junit)
+        androidTestImplementation(androidx.test.ext)
+        androidTestImplementation(androidx.test.espresso)
+        androidTestImplementation(androidx.test.compose.ui)
+        debugImplementation(androidx.composeUi.tooling)
+    }
 }
