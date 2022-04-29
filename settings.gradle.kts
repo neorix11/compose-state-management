@@ -17,3 +17,5 @@ include(":redux")
 include(":orbit")
 include(":bloc")
 include(":mavericks")
+
+enableFeaturePreview("VERSION_CATALOGS")
