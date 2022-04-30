@@ -6,7 +6,8 @@ buildscript {
     }
     dependencies {
         classpath(libs.plugin.gradle)
-        classpath("com.android.tools.build:gradle:7.1.3")
+        classpath(libs.buildTools)
+        classpath(libs.serialization)
     }
 }
 

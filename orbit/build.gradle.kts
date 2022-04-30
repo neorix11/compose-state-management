@@ -55,7 +55,7 @@ dependencies {
         implementation(bundles.androidx.compose)
         implementation(androidx.coreKtx)
         implementation(androidx.activityCompose)
-        implementation(coroutines)
+        implementation(bundles.coroutines)
 
         //navigation
         implementation(androidx.composeUi.nav)
@@ -77,4 +77,6 @@ dependencies {
         androidTestImplementation(androidx.test.compose.ui)
         debugImplementation(androidx.composeUi.tooling)
     }
+
+    implementation(project(":data"))
 }

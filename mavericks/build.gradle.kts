@@ -55,7 +55,7 @@ dependencies {
         implementation(bundles.androidx.compose)
         implementation(androidx.coreKtx)
         implementation(androidx.activityCompose)
-        implementation(coroutines)
+        implementation(bundles.coroutines)
 
         //navigation
         implementation(androidx.composeUi.nav)

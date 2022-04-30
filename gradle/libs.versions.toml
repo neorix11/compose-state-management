@@ -4,6 +4,7 @@ minSdk = "23"
 compileSdk = "32"
 targetSdk = "32"
 
+gradle = "7.1.3"
 kotlin = "1.6.20"
 coroutines = "1.6.1"
 
@@ -15,6 +16,7 @@ activityCompose = "1.4.0"
 accompanist = "0.23.0"
 lifecycle = "2.4.1"
 koin = "3.1.6"
+ktor = "2.0.1"
 
 orbit = "4.3.2"
 
@@ -25,8 +27,11 @@ espresso = "3.4.0"
 [libraries]
 
 plugin-gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+buildTools = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
+serialization = { module = "org.jetbrains.kotlin:kotlin-serialization", version.ref = "kotlin"}
 
-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+coroutines-android = {module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines"}
 coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
 
 androidx-coreKtx = { module = "androidx.core:core-ktx", version.ref = "ktxCore" }
@@ -47,9 +52,13 @@ accompanist = { module = "com.google.accompanist:accompanist-navigation-animatio
 di-koin = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin"}
 mvi-orbit-viewmodel = { module = "org.orbit-mvi:orbit-viewmodel", version.ref = "orbit"}
 
+network-ktor-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+network-ktor-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
+
 junit = { module = "junit:junit", version.ref = "junit"}
 
 
 [bundles]
 
 androidx-compose = ["androidx-composeUi", "androidx-composeMaterial", "androidx-composeUi-tooling-preview"]
+coroutines = ["coroutines-core", "coroutines-android"]

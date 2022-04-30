@@ -19,3 +19,4 @@ include(":bloc")
 include(":mavericks")
 
 enableFeaturePreview("VERSION_CATALOGS")
+include(":data")
