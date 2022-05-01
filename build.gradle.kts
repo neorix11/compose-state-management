@@ -8,6 +8,7 @@ buildscript {
         classpath(libs.plugin.gradle)
         classpath(libs.buildTools)
         classpath(libs.serialization)
+        classpath(kotlin("serialization", version = libs.versions.kotlin.get()))
     }
 }
 

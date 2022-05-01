@@ -1,7 +1,6 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
-    id("kotlinx-serialization")
 }
 
 android {
@@ -36,15 +35,20 @@ android {
 dependencies {
 
     with(libs) {
+
+        //core
+        implementation(bundles.androidx.compose)
         implementation(androidx.coreKtx)
+        implementation(androidx.activityCompose)
+        implementation(bundles.coroutines)
+
+        //navigation
+        implementation(androidx.composeUi.nav)
+
         implementation(androidx.appcompat)
         implementation(google.material)
         testImplementation(junit)
         androidTestImplementation(androidx.test.ext)
         androidTestImplementation(androidx.test.espresso)
-
-        implementation(bundles.coroutines)
-        implementation(bundles.ktor)
-        implementation(serialization)
     }
 }
