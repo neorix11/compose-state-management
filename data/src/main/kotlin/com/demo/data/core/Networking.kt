@@ -1,4 +1,4 @@
-package com.demo.data
+package com.demo.data.core
 
 import io.ktor.client.*
 import io.ktor.client.engine.cio.*
@@ -12,13 +12,14 @@ import kotlinx.serialization.json.Json
 
 fun createHttpClient() = HttpClient(CIO) {
     install(ContentNegotiation) {
-        json(Json)
+        json(Json{
+            ignoreUnknownKeys = true
+            isLenient = true
+        })
     }
     install(Logging) {
         logger = Logger.DEFAULT
-        level = LogLevel.INFO
+        level = LogLevel.ALL
     }
-    defaultRequest {
-        parametersOf("api_key", "392769cae8cb43b9e9b953eb0cec86bf")
-    }
+
 }

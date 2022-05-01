@@ -70,6 +70,8 @@ dependencies {
         //mvi
         implementation(mvi.orbit.viewmodel)
 
+        implementation(bundles.ktor)
+
         //test
         testImplementation(junit)
         androidTestImplementation(androidx.test.ext)
