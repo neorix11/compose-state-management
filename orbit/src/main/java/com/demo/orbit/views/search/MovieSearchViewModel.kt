@@ -13,11 +13,13 @@ import org.orbitmvi.orbit.syntax.simple.reduce
 import org.orbitmvi.orbit.viewmodel.container
 
 class MovieSearchViewModel(
-    private val movieRepository: MovieRepository
+    private val movieRepository: MovieRepository,
+    private val savedStateHandle: SavedStateHandle
 ): ContainerHost<MovieViewState, MovieViewSideEffect>, ViewModel() {
 
     override val container = container<MovieViewState, MovieViewSideEffect>(
-        initialState = MovieViewState()
+        initialState = MovieViewState(),
+        savedStateHandle = savedStateHandle
     )
 
     fun performMovieSearch(query: String) = intent {

@@ -30,6 +30,17 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = libs.versions.compose.get()
+    }
+    packagingOptions {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
+    }
 }
 
 dependencies {
@@ -47,8 +58,12 @@ dependencies {
 
         implementation(androidx.appcompat)
         implementation(google.material)
+        implementation(coil)
+
         testImplementation(junit)
         androidTestImplementation(androidx.test.ext)
         androidTestImplementation(androidx.test.espresso)
     }
+
+    implementation(project(":data"))
 }

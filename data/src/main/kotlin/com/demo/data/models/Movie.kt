@@ -1,9 +1,12 @@
 package com.demo.data.models
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
+@Parcelize
 data class MovieDetail (
     val id: Int,
     val title: String,
@@ -29,9 +32,10 @@ data class MovieDetail (
     val voteAverage: Double,
     @SerialName("vote_count")
     val voteCount: Int
-)
+): Parcelable
 
 @Serializable
+@Parcelize
 data class Movie (
     val id: Int,
     val title: String,
@@ -46,12 +50,14 @@ data class Movie (
     val voteAverage: Double,
     @SerialName("vote_count")
     val voteCount: Int
-    )
+    ): Parcelable
 
 @Serializable
-data class Genre(val id: Int, val name: String)
+@Parcelize
+data class Genre(val id: Int, val name: String): Parcelable
 
 @Serializable
+@Parcelize
 data class Collection(
     val id: Int,
     val name: String,
@@ -59,4 +65,4 @@ data class Collection(
     val posterPath: String,
     @SerialName("backdrop_path")
     val backdropPath: String
-)
+): Parcelable
