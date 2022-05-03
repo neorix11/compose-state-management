@@ -14,11 +14,9 @@ class MovieRepository(private val client: HttpClient) {
 
     suspend fun fetchMovieSearch(queryString: String): Outcome<MovieSearchResponse> {
        return Outcome.tryBlock {
-           client.use { client ->
                client.get("$baseUrl/search/movie") {
                    parameter("query", queryString)
                    parameter("api_key", "392769cae8cb43b9e9b953eb0cec86bf")
-            }
            }.body()
        }
     }

@@ -7,8 +7,6 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.material.*
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Add
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -19,9 +17,8 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.demo.composables.Screen
 import com.demo.composables.bottomNavigationItems
-import com.demo.composables.components.MovieBottomNavigation
-import com.demo.orbit.views.MovieSearchView
-import com.demo.orbit.views.WatchListView
+import com.demo.orbit.views.search.MovieSearchView
+import com.demo.orbit.views.watchlist.WatchListView
 
 class MainActivity : ComponentActivity() {
 

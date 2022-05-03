@@ -1,8 +1,8 @@
 package com.demo.composables
 
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Search
+import androidx.compose.material.icons.outlined.PlayArrow
 import androidx.compose.ui.graphics.vector.ImageVector
 
 data class BottomNavigation(
@@ -19,7 +19,7 @@ val bottomNavigationItems = listOf(
     ),
     BottomNavigation(
         Screen.WatchList.title,
-        Icons.Default.Favorite,
+        Icons.Outlined.PlayArrow,
         "Watch List"
     )
 )
