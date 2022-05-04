@@ -10,15 +10,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.platform.LocalContext
 import com.demo.composables.components.MovieListItem
+import com.demo.data.models.Movie
 import org.koin.androidx.compose.viewModel
 
 @Composable
-fun MovieSearchView() {
+fun MovieSearchView(
+    movieSelected: (movie: Movie) -> Unit
+) {
     
     val viewModel by viewModel<MovieSearchViewModel>()
     val state = viewModel.container.stateFlow.collectAsState()
-
-    val context = LocalContext.current
 
     Column {
         Button(onClick = { viewModel.performMovieSearch("batman") }) {
@@ -28,7 +29,7 @@ fun MovieSearchView() {
         LazyColumn(content = {
             items(items = state.value.movies) { item ->
                 MovieListItem(movieData = item) {
-                    Toast.makeText(context, item.title, Toast.LENGTH_SHORT).show()
+                    movieSelected(item)
                 }
             }
         })

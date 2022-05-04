@@ -17,6 +17,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.demo.composables.Screen
 import com.demo.composables.bottomNavigationItems
+import com.demo.orbit.views.movie.MovieDetailView
 import com.demo.orbit.views.search.MovieSearchView
 import com.demo.orbit.views.watchlist.WatchListView
 
@@ -68,10 +69,19 @@ fun MainLayout() {
             Box(Modifier.padding(paddingValues)) {
                 NavHost(navController = navController, startDestination = Screen.MovieSearch.title) {
                     composable(Screen.MovieSearch.title) {
-                        MovieSearchView()
+                        MovieSearchView{
+                            navController.navigate(Screen.MovieDetail.title + "/${it.title}/${it.id}")
+                        }
                     }
                     composable(Screen.WatchList.title) {
                         WatchListView()
+                    }
+                    composable(Screen.MovieDetail.title + "/{title}/{movieId}") {
+                        MovieDetailView(
+                            it.arguments?.get("title") as String,
+                            it.arguments?.get("movieId") as String,
+                            popBack = { navController.popBackStack() }
+                        )
                     }
                 }
             }
