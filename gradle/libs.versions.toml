@@ -12,7 +12,7 @@ compose = "1.2.0-alpha08"
 navCompose = "2.4.2"
 coilCompose = "2.0.0-rc03"
 activityCompose = "1.4.0"
-accompanist = "0.23.0"
+accompanist = "0.24.7-alpha"
 lifecycle = "2.4.1"
 koin = "3.2.0-beta-1"
 ktor = "2.0.1"
@@ -49,7 +49,7 @@ androidx-test-espresso = { module = "androidx.test.espresso:espresso-core", vers
 androidx-test-compose-ui = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "compose" }
 
 coil = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose"}
-accompanist = { module = "com.google.accompanist:accompanist-navigation-animation", version.ref = "accompanist" }
+google-accompanist-nav = { module = "com.google.accompanist:accompanist-navigation-animation", version.ref = "accompanist" }
 
 di-koin = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin"}
 mvi-orbit-viewmodel = { module = "org.orbit-mvi:orbit-viewmodel", version.ref = "orbit"}

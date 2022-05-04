@@ -66,7 +66,7 @@ dependencies {
 
         //utility
         implementation(coil)
-        implementation(accompanist)
+        implementation(google.accompanist.nav)
 
         //mvi
         implementation(mvi.orbit.viewmodel)

@@ -56,6 +56,8 @@ dependencies {
         //navigation
         implementation(androidx.composeUi.nav)
 
+        implementation(google.accompanist.nav)
+
         implementation(androidx.appcompat)
         implementation(google.material)
         implementation(coil)
