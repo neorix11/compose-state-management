@@ -10,7 +10,6 @@ import io.ktor.client.request.*
 class MovieRepository(private val client: HttpClient) {
 
     private val baseUrl = "https://api.themoviedb.org/3"
-    private val imageUrl = "https://image.tmdb.org/t/p"
 
     suspend fun fetchMovieSearch(queryString: String): Outcome<MovieSearchResponse> {
        return Outcome.tryBlock {
@@ -22,7 +21,6 @@ class MovieRepository(private val client: HttpClient) {
     }
 
     suspend fun fetchMavericksMovieSearch(queryString: String): MovieSearchResponse {
-
         return client.get("$baseUrl/search/movie") {
                 parameter("query", queryString)
                 parameter("api_key", "392769cae8cb43b9e9b953eb0cec86bf")
