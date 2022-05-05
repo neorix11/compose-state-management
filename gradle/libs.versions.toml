@@ -16,6 +16,7 @@ accompanist = "0.24.7-alpha"
 lifecycle = "2.4.1"
 koin = "3.2.0-beta-1"
 ktor = "2.0.1"
+airbnb = "2.6.1"
 
 orbit = "4.3.2"
 
@@ -54,6 +55,9 @@ google-accompanist-nav = { module = "com.google.accompanist:accompanist-navigati
 di-koin = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin"}
 mvi-orbit-viewmodel = { module = "org.orbit-mvi:orbit-viewmodel", version.ref = "orbit"}
 
+airbnb-mavericks = { module = "com.airbnb.android:mavericks", version.ref = "airbnb"}
+airbnb-mavericks-compose = { module = "com.airbnb.android:mavericks-compose", version.ref = "airbnb"}
+
 network-ktor-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 network-ktor-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
 network-ktor-contentNegotion = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
@@ -68,3 +72,4 @@ junit = { module = "junit:junit", version.ref = "junit"}
 androidx-compose = ["androidx-composeUi", "androidx-composeMaterial", "androidx-composeUi-tooling-preview"]
 coroutines = ["coroutines-core", "coroutines-android"]
 ktor = ["network-ktor-core", "network-ktor-cio", "network-ktor-contentNegotion", "network-ktor-json", "network-ktor-logging"]
+mavericks = ["airbnb-mavericks", "airbnb-mavericks-compose"]

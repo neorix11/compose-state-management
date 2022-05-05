@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-parcelize")
 }
 
 android {
@@ -68,7 +69,10 @@ dependencies {
         implementation(google.accompanist.nav)
 
         //mvi
+        implementation(bundles.mavericks)
 
+        //networking
+        implementation(bundles.ktor)
 
         //test
         testImplementation(junit)
@@ -76,5 +80,8 @@ dependencies {
         androidTestImplementation(androidx.test.espresso)
         androidTestImplementation(androidx.test.compose.ui)
         debugImplementation(androidx.composeUi.tooling)
+
+        implementation(project(":data"))
+        implementation(project(":composables"))
     }
 }

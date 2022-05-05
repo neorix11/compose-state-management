@@ -1,0 +1,50 @@
+package com.demo.mavericks.views.search
+
+import android.widget.Toast
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.material.Button
+import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.ui.platform.LocalContext
+import com.airbnb.mvrx.compose.collectAsState
+import com.airbnb.mvrx.compose.mavericksViewModel
+import com.demo.composables.components.MovieListItem
+import com.demo.composables.components.MovieSearchBar
+import com.demo.data.core.LoadingState
+import com.demo.data.models.Movie
+import org.koin.androidx.compose.viewModel
+
+@Composable
+fun MovieSearchView(
+    movieSelected: (movie: Movie) -> Unit
+) {
+
+    val context = LocalContext.current
+    val viewModel: MovieSearchViewModel = mavericksViewModel()
+    val state = viewModel.collectAsState().value
+
+    Column {
+        MovieSearchBar{ searchTerm ->
+            viewModel.performMovieSearch(searchTerm)
+        }
+        LazyColumn(content = {
+            if(state.loadingState == LoadingState.ERROR) {
+                Toast.makeText(
+                    context,
+                    "There was an error: ${state.error}",
+                    Toast.LENGTH_SHORT)
+                    .show()
+            } else {
+                items(items = state.movies) { item ->
+                    MovieListItem(movieData = item) {
+                        movieSelected(item)
+                    }
+                }
+            }
+        })
+    }
+
+}

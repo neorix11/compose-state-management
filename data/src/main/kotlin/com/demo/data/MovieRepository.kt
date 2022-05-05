@@ -21,6 +21,14 @@ class MovieRepository(private val client: HttpClient) {
        }
     }
 
+    suspend fun fetchMavericksMovieSearch(queryString: String): MovieSearchResponse {
+
+        return client.get("$baseUrl/search/movie") {
+                parameter("query", queryString)
+                parameter("api_key", "392769cae8cb43b9e9b953eb0cec86bf")
+            }.body()
+    }
+
     suspend fun fetchRecommendedMovies(movieId: Int): Outcome<List<Movie>> {
         return Outcome.tryBlock {
             client.use { client ->
