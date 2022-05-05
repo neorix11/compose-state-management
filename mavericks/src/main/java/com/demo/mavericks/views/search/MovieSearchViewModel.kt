@@ -18,29 +18,29 @@ class MovieSearchViewModel(
     private val repository: MovieRepository by inject()
 
     fun performMovieSearch(query: String) = withState { state ->
+
         if(state.loadingState == LoadingState.LOADING) return@withState
 
-        suspend {
-            repository.fetchMavericksMovieSearch(query)
-        }.execute {
-            when(it) {
-                is Success -> {
-                    copy(
-                        request = it,
-                        movies = it().results,
-                        loadingState = LoadingState.LOADED,
-                    )
+        suspend { repository.fetchMavericksMovieSearch(query) }
+            .execute {
+                when(it) {
+                    is Success -> {
+                        copy(
+                            request = it,
+                            movies = it().results,
+                            loadingState = LoadingState.LOADED,
+                        )
+                    }
+                    is Fail -> {
+                        copy(
+                            loadingState = LoadingState.ERROR,
+                            error = it.toString()
+                        )
+                    }
+                    else -> {
+                        state
+                    }
                 }
-                is Fail -> {
-                    copy(
-                        loadingState = LoadingState.ERROR,
-                        error = it.toString()
-                    )
-                }
-                else -> {
-                    state
-                }
-            }
         }
     }
 
