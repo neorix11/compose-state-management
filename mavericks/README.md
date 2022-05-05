@@ -11,6 +11,7 @@ Pros:
 • Supports Data Binding
 • Supports Koin - Sort of...
 • Handles lifecycle events and cleanup
+• Mature - Currently on v2
 
 Cons: 
 

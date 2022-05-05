@@ -13,4 +13,5 @@ Pros:
 • Lightweight and easy to implement
 
 Cons: 
-• While it's not hard to shoe-horn, it isn't really setup to support Compose yet. 
+• While it's not hard to shoe-horn, it isn't really setup to support Compose yet.
+• While it's thin, it's also very new and perhaps not tried as we would like.
