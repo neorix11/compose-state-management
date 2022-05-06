@@ -9,6 +9,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.platform.LocalContext
+import com.demo.composables.components.MovieDisplayList
 import com.demo.composables.components.MovieListItem
 import com.demo.composables.components.MovieSearchBar
 import com.demo.data.core.LoadingState
@@ -29,21 +30,17 @@ fun MovieSearchView(
         MovieSearchBar{ searchTerm ->
             viewModel.performMovieSearch(searchTerm)
         }
-        LazyColumn(content = {
-            if(state.loadingState == LoadingState.ERROR) {
-                Toast.makeText(
-                    context,
-                    "There was an error: ${state.error}",
-                    Toast.LENGTH_SHORT)
-                    .show()
-            } else {
-                items(items = state.movies) { item ->
-                    MovieListItem(movieData = item) {
-                        movieSelected(item)
-                    }
-                }
+        if(state.loadingState == LoadingState.ERROR) {
+            Toast.makeText(
+                context,
+                "There was an error: ${state.error}",
+                Toast.LENGTH_SHORT)
+                .show()
+        } else {
+            MovieDisplayList(state.movies) { movie ->
+                movieSelected(movie)
             }
-        })
+        }
     }
 
 }

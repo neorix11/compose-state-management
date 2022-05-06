@@ -20,6 +20,7 @@ fun MovieSearchBar(onSearch: (searchTerm: String) -> Unit) {
 
     val focus = LocalTextInputService.current
     val searchText = remember { mutableStateOf("")}
+
     Row(
         Modifier.padding(8.dp)
             .fillMaxWidth(),
