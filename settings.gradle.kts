@@ -20,4 +20,6 @@ include(":mavericks")
 
 enableFeaturePreview("VERSION_CATALOGS")
 include(":data")
+include(":domain")
 include(":composables")
+include(":custom")

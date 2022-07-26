@@ -52,7 +52,9 @@ androidx-test-compose-ui = { module = "androidx.compose.ui:ui-test-junit4", vers
 coil = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose"}
 google-accompanist-nav = { module = "com.google.accompanist:accompanist-navigation-animation", version.ref = "accompanist" }
 
-di-koin = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin"}
+di-koin-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin"}
+di-koin-core = { module = "io.insert-koin:koin-android", version.ref = "koin" }
+
 mvi-orbit-viewmodel = { module = "org.orbit-mvi:orbit-viewmodel", version.ref = "orbit"}
 
 airbnb-mavericks = { module = "com.airbnb.android:mavericks", version.ref = "airbnb"}
@@ -72,4 +74,5 @@ junit = { module = "junit:junit", version.ref = "junit"}
 androidx-compose = ["androidx-composeUi", "androidx-composeMaterial", "androidx-composeUi-tooling-preview"]
 coroutines = ["coroutines-core", "coroutines-android"]
 ktor = ["network-ktor-core", "network-ktor-cio", "network-ktor-contentNegotion", "network-ktor-json", "network-ktor-logging"]
+koin = ["di-koin-core", "di-koin-compose"]
 mavericks = ["airbnb-mavericks", "airbnb-mavericks-compose"]

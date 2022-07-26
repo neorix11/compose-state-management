@@ -7,7 +7,7 @@ import io.ktor.client.*
 import io.ktor.client.call.*
 import io.ktor.client.request.*
 
-class MovieRepository(private val client: HttpClient) {
+class GlobalMovieRepository(private val client: HttpClient) {
 
     private val baseUrl = "https://api.themoviedb.org/3"
 

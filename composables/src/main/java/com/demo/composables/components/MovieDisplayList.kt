@@ -4,8 +4,8 @@ import android.widget.Toast
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
+import com.bluelampcreative.domain.models.Movie
 import com.demo.data.core.LoadingState
-import com.demo.data.models.Movie
 
 @Composable
 fun MovieDisplayList(

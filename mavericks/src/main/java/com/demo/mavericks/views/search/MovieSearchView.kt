@@ -38,9 +38,9 @@ fun MovieSearchView(
                 Toast.LENGTH_SHORT)
                 .show()
         } else {
-            MovieDisplayList(state.movies) { movie ->
-                movieSelected(movie)
-            }
+//            MovieDisplayList(state.movies) { movie ->
+//                movieSelected(movie)
+//            }
         }
     }
 }

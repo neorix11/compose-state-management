@@ -1,12 +1,9 @@
 package com.demo.mavericks.views.search
 
-import androidx.lifecycle.SavedStateHandle
-import androidx.lifecycle.ViewModel
 import com.airbnb.mvrx.Fail
-import com.airbnb.mvrx.MavericksViewInternalViewModel
 import com.airbnb.mvrx.MavericksViewModel
 import com.airbnb.mvrx.Success
-import com.demo.data.MovieRepository
+import com.demo.data.GlobalMovieRepository
 import com.demo.data.core.LoadingState
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
@@ -15,7 +12,7 @@ class MovieSearchViewModel(
     movieViewState: MovieViewState
 ): MavericksViewModel<MovieViewState>(movieViewState), KoinComponent {
 
-    private val repository: MovieRepository by inject()
+    private val repository: GlobalMovieRepository by inject()
 
     fun performMovieSearch(query: String) = withState { state ->
 

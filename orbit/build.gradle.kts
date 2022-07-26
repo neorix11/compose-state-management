@@ -62,7 +62,7 @@ dependencies {
         implementation(androidx.composeUi.nav)
 
         //di
-        implementation(di.koin)
+        implementation(bundles.koin)
 
         //utility
         implementation(coil)

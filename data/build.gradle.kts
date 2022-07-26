@@ -48,4 +48,6 @@ dependencies {
         implementation(bundles.ktor)
         implementation(serialization)
     }
+
+    implementation(project(":domain"))
 }

@@ -19,8 +19,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
+import com.bluelampcreative.domain.models.Movie
 import com.demo.composables.R
-import com.demo.data.models.Movie
 
 @Composable
 fun MovieListItem(
